@@ -69,6 +69,8 @@ QHYCCD::QHYCCD(const char *name, const char *camID) : FilterInterface(this)
     if (!setDeviceNicknameFromId(m_CamID))
         setDeviceName(this->m_Name);
 
+    setDeviceNicknameFromId(m_CamID);
+
     setVersion(INDI_QHY_VERSION_MAJOR, INDI_QHY_VERSION_MINOR);
 
     m_QHYLogCallback = [this](const std::string & message)
